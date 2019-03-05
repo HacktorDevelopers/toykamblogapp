@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "Toykam Blog",
+  "short_name": "Toykam Blog",
+  "version": "com.phonegap.helloworld",
+  "description": "Read News",
+  "author": "PhoneGap Team",
+  "icons": [],
+  "start_url": "index.html"
+}
