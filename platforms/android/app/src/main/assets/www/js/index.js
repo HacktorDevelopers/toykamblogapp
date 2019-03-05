@@ -34,23 +34,19 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
 		var url = "http://toykam-dailytok.blogspot.com";
-		cordova.InAppBrowser.open(url, '_self');
-         app.receivedEvent('deviceready');
-	    alert("App Is Ready");
+        // cordova.InAppBrowser.open(url, '_self');
+        var gotoBlog = document.getElementById('gotoblog');
+        gotoBlog.addEventListener('click', this.open_blog);
+        app.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-	parentElement.querySelector('.blink').setAttribute('style', 'display:none;');
-	
-	var webview = document.getElementById("webview");                              var web = webview.querySelector(".web");                                       web.setAttribute('src', 'http://toykam-dailytok.blogspot.com');
-
         console.log('Received Event: ' + id);
+    },
+
+    open_blog: function(){
+        var url = "http://toykam-dailytok.blogspot.com";
+        cordova.InAppBrowser.open(url, '_self');
     }
 };
