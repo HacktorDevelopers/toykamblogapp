@@ -34,7 +34,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
 		var url = "http://toykam-dailytok.blogspot.com";
-        // cordova.InAppBrowser.open(url, '_self');
+        cordova.InAppBrowser.open(url, '_self');
         var gotoBlog = document.getElementById('gotoblog');
         gotoBlog.addEventListener('click', this.open_blog);
         app.receivedEvent('deviceready');
