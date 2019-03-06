@@ -5,7 +5,8 @@
   "short_name": "Toykam Blog",
   "version": "com.phonegap.helloworld",
   "description": "Read News",
-  "author": "PhoneGap Team",
+  "author": "Toykam",
   "icons": [],
-  "start_url": "index.html"
+  "start_url": "index.html",
+  "theme_color": "#000000"
 }

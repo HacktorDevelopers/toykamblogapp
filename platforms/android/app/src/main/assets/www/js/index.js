@@ -43,6 +43,11 @@ var app = {
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
         console.log('Received Event: ' + id);
+        if (cordova.platformId == 'android') {
+            alert('Status Bar Visible');
+        }
+        StatusBar.backgroundColorByHexString("#0000ff");
+        StatusBar.show();
     },
 
     open_blog: function(){

@@ -40,7 +40,7 @@
         Read News
     </description>
     <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+        Toykam
     </author>
     <content src="index.html" />
     <access origin="*" />
@@ -74,4 +74,5 @@
     <preference name="loglevel" value="DEBUG" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
+    <preference name="StatusBarBackgroundColor" value="#000000" />
 </widget>
