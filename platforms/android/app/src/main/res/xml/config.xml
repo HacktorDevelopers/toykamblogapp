@@ -43,6 +43,7 @@
         Toykam
     </author>
     <content src="index.html" />
+    <gap:plugin name="com.admob.plugin" source="plugins.cordova.io" version="3.0.0" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />

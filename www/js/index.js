@@ -32,18 +32,23 @@ var app = {
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-		
-        gotoBlog.addEventListener('click', this.open_blog);
+    onDeviceReady: function() {		
         app.receivedEvent('deviceready');
+        admob.initAdmob("ca-app-pub-4504479228598196/5311317412");
+        admob.showBanner(admob.BannerSize.BANNER, admob.Position.BOTTOM_APP);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
-        console.log('Received Event: ' + id);
         var url = "http://toykam-dailytok.blogspot.com";
-        cordova.InAppBrowser.open(url, '_self',  'location=no,hidden=yes,footer=yes,closebuttoncaption="close blog",closebuttoncolor="#ffeebb",hardwareback=yes,hideurlbar=yes,zoom=no');
+        var web = cordova.InAppBrowser.open(url, '_self', 'location=no,hidden=yes,footer=yes,closebuttoncaption="close blog",closebuttoncolor="#ffeebb",hardwareback=yes,hideurlbar=yes,zoom=no');
+        web.addEventListener('loadstart', function(){
+            alert('Loading...');
+        });
         var gotoBlog = document.getElementById('gotoblog');
+        gotoBlog.addEventListener('click', this.open_blog);
+
+
         if (cordova.platformId == 'android') {
             StatusBar.backgroundColorByName("red");
         }
@@ -57,6 +62,6 @@ var app = {
 
     open_blog: function(){
         var url = "http://toykam-dailytok.blogspot.com";
-        cordova.InAppBrowser.open(url, '_self', 'location=no',  'location=no,hidden=yes,footer=yes,closebuttoncaption="close blog",closebuttoncolor="#ffeebb",hardwareback="yes",hideurlbar="yes",zoom="no"');
+        cordova.InAppBrowser.open(url, '_self', 'location=no', 'location=no,hidden=yes,footer=yes,closebuttoncaption="close blog",closebuttoncolor="#ffeebb",hardwareback="yes",hideurlbar="yes",zoom="no"');
     }
 };
