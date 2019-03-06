@@ -36,7 +36,7 @@ var app = {
 		var url = "http://toykam-dailytok.blogspot.com";
         cordova.InAppBrowser.open(url, '_self');
         var gotoBlog = document.getElementById('gotoblog');
-        gotoBlog.addEventListener('click', this.open_blog, 'location=no');
+        gotoBlog.addEventListener('click', this.open_blog, 'location="no",hidden="yes",footer="yes",closebuttoncaption="close blog",closebuttoncolor="#ffeebb",hardwareback="yes",hideurlbar="yes",zoom="no"');
         app.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
