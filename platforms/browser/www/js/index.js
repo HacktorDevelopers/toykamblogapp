@@ -36,7 +36,7 @@ var app = {
 		var url = "http://toykam-dailytok.blogspot.com";
         cordova.InAppBrowser.open(url, '_self');
         var gotoBlog = document.getElementById('gotoblog');
-        gotoBlog.addEventListener('click', this.open_blog);
+        gotoBlog.addEventListener('click', this.open_blog, 'location=no');
         app.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
@@ -47,6 +47,6 @@ var app = {
 
     open_blog: function(){
         var url = "http://toykam-dailytok.blogspot.com";
-        cordova.InAppBrowser.open(url, '_self');
+        cordova.InAppBrowser.open(url, '_self', 'location=no');
     }
 };
