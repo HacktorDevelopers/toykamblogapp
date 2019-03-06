@@ -34,9 +34,9 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
 		var url = "http://toykam-dailytok.blogspot.com";
-        cordova.InAppBrowser.open(url, '_self');
+        cordova.InAppBrowser.open(url, '_self',  'location=no,hidden="yes",footer="yes",closebuttoncaption="close blog",closebuttoncolor="#ffeebb",hardwareback="yes",hideurlbar="yes",zoom="no"');
         var gotoBlog = document.getElementById('gotoblog');
-        gotoBlog.addEventListener('click', this.open_blog, 'location="no",hidden="yes",footer="yes",closebuttoncaption="close blog",closebuttoncolor="#ffeebb",hardwareback="yes",hideurlbar="yes",zoom="no"');
+        gotoBlog.addEventListener('click', this.open_blog);
         app.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
@@ -56,6 +56,6 @@ var app = {
 
     open_blog: function(){
         var url = "http://toykam-dailytok.blogspot.com";
-        cordova.InAppBrowser.open(url, '_self', 'location=no');
+        cordova.InAppBrowser.open(url, '_self', 'location=no',  'location=no,hidden="yes",footer="yes",closebuttoncaption="close blog",closebuttoncolor="#ffeebb",hardwareback="yes",hideurlbar="yes",zoom="no"');
     }
 };
